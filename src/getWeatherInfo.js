@@ -1,4 +1,8 @@
-const getWeatherInfo = () => {
+import { API_KEY } from './constants.js';
+const locationName = document.querySelector('.location-timezone');
+const temperature = document.querySelector('.temperature-degree');
+const description = document.querySelector('.temperature-description');
+export const getWeatherInfo = (lon, lat, iconImg) => {
   const API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`;
   return fetch(API_URL)
     .then((response) => {
